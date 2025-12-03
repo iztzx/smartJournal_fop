@@ -8,8 +8,7 @@ import java.io.OutputStream; // Needed for POST
 public class API {
 
     // Keep these for reference, but we primarily use the arguments passed in
-    public static final String MOOD_API_URL = "https://api-inference.huggingface.co/models/distilbert-base-uncased-finetuned-sst-2-english";
-
+    public static final String MOOD_API_URL = "https://router.huggingface.co/hf-inference/models/tabularisai/multilingual-sentiment-analysis";
     /**
      * GENERIC GET REQUEST
      * Can be used for Weather API, IP API, etc.
@@ -22,8 +21,8 @@ public class API {
             conn.setRequestProperty("Accept", "application/json");
             
             // Simple timeout to prevent hanging if IP API is slow
-            conn.setConnectTimeout(3000); 
-            conn.setReadTimeout(3000);
+            conn.setConnectTimeout(15000); 
+            conn.setReadTimeout(15000);
 
             return readResponse(conn);
         } catch (Exception e) {
