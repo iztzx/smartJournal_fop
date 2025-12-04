@@ -1,12 +1,12 @@
 SmartJournal.class
+JournalEntry.class
+EnvLoader.class
+SmartJournal$JournalEntry.class
+WeatherManager.class
+API.class
 UserManager.class
 DbManager.class
-JournalEntry.class
 WeatherManager$LocationData.class
-SmartJournalGUI.class
-EnvLoader.class
 JournalManager.class
 User.class
 TestWeather.class
-WeatherManager.class
-API.class

@@ -1,0 +1,150 @@
+/* --- GLOBAL --- */
+@font-face {
+    font-family: 'Google Sans';
+    src: url('https://fonts.gstatic.com/s/googlesans/v14/4UaGrENHsxJlGDuGo1OIlL3Owp4.woff2');
+}
+
+.root {
+    -fx-font-family: 'Google Sans', 'Segoe UI', sans-serif;
+    -fx-base-color: #f8f9fa;
+    -fx-accent: #1a73e8; /* Google Blue */
+}
+
+/* --- SPLIT PANE --- */
+.split-pane-divider {
+    -fx-background-color: transparent;
+    -fx-padding: 0 5 0 5;
+}
+
+/* --- TIMELINE LEFT --- */
+.timeline-container {
+    -fx-background-color: #ffffff;
+}
+
+.timeline-list {
+    -fx-background-color: transparent;
+    -fx-padding: 10;
+}
+
+.timeline-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 5 10 5 10;
+}
+
+.timeline-list .list-cell:empty {
+    -fx-background-color: transparent;
+}
+
+/* --- TIMELINE CARD --- */
+.timeline-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 5, 0, 0, 2);
+    -fx-padding: 15;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 12;
+    -fx-cursor: hand;
+}
+
+.timeline-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(26, 115, 232, 0.2), 8, 0, 0, 4);
+    -fx-border-color: #1a73e8;
+}
+
+.card-date {
+    -fx-font-size: 13px;
+    -fx-text-fill: #5f6368;
+    -fx-font-weight: bold;
+}
+
+.card-preview {
+    -fx-font-size: 15px;
+    -fx-text-fill: #202124;
+}
+
+/* --- TAGS --- */
+.tag {
+    -fx-padding: 4 8;
+    -fx-background-radius: 15;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.tag-positive { -fx-background-color: #e6f4ea; -fx-text-fill: #137333; }
+.tag-negative { -fx-background-color: #fce8e6; -fx-text-fill: #c5221f; }
+.tag-neutral  { -fx-background-color: #f1f3f4; -fx-text-fill: #5f6368; }
+.tag-weather  { -fx-background-color: #e8f0fe; -fx-text-fill: #1967d2; }
+
+/* --- GAMIFICATION RIGHT --- */
+.gamification-panel {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: transparent transparent transparent #dadce0;
+}
+
+.level-badge {
+    -fx-background-color: #1a73e8;
+    -fx-background-radius: 50%;
+    -fx-min-width: 80;
+    -fx-min-height: 80;
+    -fx-max-width: 80;
+    -fx-max-height: 80;
+    -fx-effect: dropshadow(gaussian, rgba(26, 115, 232, 0.4), 10, 0, 0, 3);
+}
+
+.level-number {
+    -fx-font-size: 32px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.streak-label {
+    -fx-font-size: 18px;
+    -fx-text-fill: #e37400; /* Orange for fire */
+    -fx-font-weight: bold;
+}
+
+/* --- BUTTONS --- */
+.primary-button {
+    -fx-background-color: #1a73e8;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #1557b0;
+}
+
+.accent-button {
+    -fx-background-color: #34a853; /* Google Green */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 24;
+    -fx-background-radius: 24;
+    -fx-cursor: hand;
+}
+
+.empty-state-text {
+    -fx-font-size: 16px;
+    -fx-text-fill: #5f6368;
+}
+
+.header-text {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.subheader-text {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #202124;
+}
+
+/* --- MENUBAR --- */
+.menu-bar {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #dadce0 transparent;
+}

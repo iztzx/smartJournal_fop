@@ -15,12 +15,14 @@
     </properties>
 
     <dependencies>
+        <!-- PostgreSQL Driver for Supabase Connection -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.7.3</version> 
         </dependency>
 
+        <!-- JavaFX Dependencies -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -54,8 +56,9 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>SmartJournalGUI</mainClass>
-                    <launcher>SmartJournalGUI</launcher>
+                    <!-- UPDATED: Pointing to the correct main application class -->
+                    <mainClass>SmartJournalApp</mainClass>
+                    <launcher>SmartJournalApp</launcher>
                     <jvmArgs>
                         <jvmArg>-Djava.net.preferIPv6Addresses=true</jvmArg>
                     </jvmArgs>
