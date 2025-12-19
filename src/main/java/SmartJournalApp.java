@@ -589,11 +589,11 @@ public class SmartJournalApp extends Application {
 
             content.getChildren().addAll(table, assessmentLabel, summaryView);
 
-            Button exportPdfBtn = new Button("Export to PDF");
-            exportPdfBtn.getStyleClass().add("secondary-button");
-            exportPdfBtn.setOnAction(e -> exportSummaryToPDF());
+            Button exportBtn = new Button("Export to File");
+            exportBtn.getStyleClass().add("secondary-button");
+            exportBtn.setOnAction(e -> exportSummaryToFile());
 
-            content.getChildren().add(exportPdfBtn);
+            content.getChildren().add(exportBtn);
 
             new Thread(() -> {
                 try {
@@ -622,7 +622,7 @@ public class SmartJournalApp extends Application {
         dialog.showAndWait();
     }
 
-    private void exportSummaryToPDF() {
+    private void exportSummaryToFile() {
         if (currentSummaryText == null || currentSummaryText.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Export Failed");
@@ -633,24 +633,24 @@ public class SmartJournalApp extends Application {
         }
 
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Save Summary as PDF");
-        fileChooser.setInitialFileName("Weekly_Summary.pdf");
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
+        fileChooser.setTitle("Save Summary as Text");
+        fileChooser.setInitialFileName("Weekly_Summary.txt");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
 
         File file = fileChooser.showSaveDialog(null);
         if (file != null) {
-            boolean success = SummaryGenerator.exportToPDF(currentSummaryText, file.getAbsolutePath());
+            boolean success = SummaryGenerator.saveToTextFile(currentSummaryText, file);
             if (success) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Export Successful");
-                alert.setHeaderText("PDF Exported");
+                alert.setHeaderText("Summary Exported");
                 alert.setContentText("Summary has been exported to " + file.getAbsolutePath());
                 alert.showAndWait();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Export Failed");
-                alert.setHeaderText("Error Exporting PDF");
-                alert.setContentText("An error occurred while exporting the PDF.");
+                alert.setHeaderText("Error Exporting Summary");
+                alert.setContentText("An error occurred while exporting the summary.");
                 alert.showAndWait();
             }
         }
